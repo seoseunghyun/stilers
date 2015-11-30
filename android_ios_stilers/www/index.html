@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+	    <link href="css/index.css" rel="stylesheet" />
+	    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" type="text/css" href="css/font.css">
+	    <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery.js" type="text/javascript"></script>
+    </head>
+    <body>
+	<div id="wrap">
+	    <div id="listWrap">
+
+	    </div>
+	    
+	<div id="optionWrap"> 
+		<div id="optionLine">
+			
+		</div>
+		<div id="optionContent">
+			
+			<div id="optionId"></div>
+			<div id="optionAuthWrap"><strong>Author : </strong>
+				<span id="optionAuth"></span>
+			</div>
+			<div id="optionWriterWrap"><strong>Writer : </strong>
+				<span id="optionWriter"></span>
+			</div>
+			<div id="optionViewerWrap"><strong>Viewer : </strong>
+				<span id="optionViewer"></span>
+			</div>
+			 
+			<div id="optionBackBtn" class="icon">&#x4a;</div>
+		</div>
+		
+
+	</div>
+	    <div id="newWrap">
+			<div id="newInputWrap">
+				<font color="white"><b>Create New Tile</b></font><br />
+				<div id="newInputId">
+					#
+				</div>
+				<div id="newMsgCancelBtn" class="icon">&#x4d;</div>
+				
+				<div id="newMsgAddBtn" class="icon">&#x4e;</div>
+				<div id="newTextarea">
+				</div>
+			</div>
+	    </div>
+	    
+	    
+	    <div id="roomWrap">
+			<div id="roomInputWrap">
+				<font color="white"><b>Tile name</b></font><br />
+				<div id="roomInputId">
+					#
+				</div>
+				<div id="roomMsgCancelBtn" class="icon">&#x4d;</div>
+				
+				<div id="roomMsgAddBtn" class="icon">&#x4c;</div>
+				<div id="roomTextarea">
+				</div>
+			</div> 
+	    </div>
+	    
+	    
+	    <div id="quickRoomWrap">
+			<div id="quickRoomInputWrap">
+				<font color="white"><b>Tile name</b></font><br />
+				<div id="quickRoomInputId">
+					#
+				</div>
+				<div id="quickRoomMsgCancelBtn" class="icon">&#x4d;</div>
+				
+				<div id="quickRoomMsgAddBtn" class="icon">&#x4c;</div>
+				<div id="quickRoomTextarea">
+				</div>
+			</div> 
+	    </div>
+	    
+	    
+	    <div id="bottomWrap">
+		    <b><span id="newBtn">New Tile</span> <span class="icon" style="font-size: 17px;">&#x4b;</span> <span id="tagBtn">Copyright</span>
+	    </div>
+	    <div id="quickBtn">
+		    <span class="icon">&#xe080;</span>
+	    </div>
+	    <div id="quickWrap">
+		    <div id="quickId">#<span id="quickIdCustom"></span></div>
+		    <div id="quickRe" class="icon">&#x4a;</div>
+		    <div id="quickDial">
+			    <div class="dial">1</div>
+			    <div class="dial">2</div>
+			    <div class="dial">3</div>
+			    <div class="dial">4</div>
+			    <div class="dial">5</div>
+			    <div class="dial">6</div>
+			    <div class="dial">7</div>
+			    <div class="dial">8</div>
+			    <div class="dial">9</div>
+			    <div class="dial">0</div>
+		    </div>
+			<div id="quickBtnWrap">			    
+			    <div id="quickSubmit" class="icon">&#x4e;</div>
+			    <div id="quickCancel" class="icon">&#x4d;</div>
+			</div>
+	    </div>
+	    
+	    <div id="modifyWrap" mode="" tile_id="">
+		    <div id="modifyId"><input id="modifyIdCustom"/></div>
+			<div id="modifyBtnWrap">			    
+			    <div id="modifySubmit" alt="" class="icon">&#x4e;</div>
+			    <div id="modifyCancel" class="icon">&#x4d;</div>
+			</div>
+	    </div>
+	    
+	    
+	    
+	    <div id="loginWrap" >
+		    <div class="logoWrap">
+				<img id="logoImg" src="img/logo.png" width="190" />
+		    </div>
+		    <div class="loginWrap">
+			    <div class="inputWrap">
+			    	<div class="icon inputIcon">&#xe010;</div>
+			    	<div class="input"><input id="loginEmailInput" type="text" placeholder="Input your email" /></div>
+			    </div>
+			    <div class="inputWrap">
+			    	<div class="icon inputIcon">&#xe001;</div>
+			    	<div class="input"><input id="loginPWInput" type="password" placeholder="Input your password" /></div>
+			    </div>
+			    <div id="joinWrap" class="inputWrap">
+			    	<div class="icon inputIcon">&#xe108;</div>
+			    	<div class="input"><input id="loginNameInput" type="text" placeholder="Input your name" /></div>
+			    	<div class="agreement">
+				    	<span id="showAgreement"><font class="icon">&#x70;</font>&nbsp;&nbsp;<span id="agreeTitle">약관에 동의하셔야 합니다</span></span>
+			    	</div>
+			    </div>
+			    <div class="btnWrap">
+				<div id="loginSubmit" class="icon" style="font-size: 29px; margin-top: 1px; margin-right: 10px;">&#xe052;</div>
+				<div id="joinBtn" class="icon">&#xe050;</div>
+			    </div>
+
+		    </div>
+	    </div>
+	    
+	    <div id="agreeWrap" >
+			<div id="agreeContent">
+				<pre>
+제 1조 (목적)
+이 규칙은 본 사이트의 회원가입에 대한 조건 및 절차와 기타 필요한 사항을 규정함을 목적으로 합니다.
+
+제 2조 (규칙의 효력 및 변경)
+① 이 규칙의 내용은 회원가입시 동의와 공지에 의해서 효력을 발생합니다.
+② 본 프로젝트 운영위가 필요하다고 인정되는 경우 이 규칙의 내용을 개정(변경, 삭제 또는 추가) 할 수 있으며, 개정된 규칙은 상기 제 ①항과 같은 방법으로 효력을 발생합니다.
+
+제 3조 (규칙외 준칙)
+이 규칙에 명시되지 않은 사항은 전기통신기본법, 전기 통신사업법 및 기타 관련법령의 규정에 의합니다.
+
+제 4조 (회원의 범위)
+① 회원가입을 한 자에 한해 회원임을 원칙으로 합니다.
+② 비회원은 특정 영역의 게시판을 사용하실 수 없습니다.
+③ 회원이라 함은 회원과 비회원을 통칭합니다.
+④ 기타 언급되지 않은 사항은 일반 통상적 회원가입 기준을 따릅니다.
+
+제 5조 (회원의 의무)
+① 회원은 이 규칙에서 규정하는 사항과 공지된 사항을 준수하여야 합니다.
+② 정식회원은 아래 각 호의 행위를 하여서는 안됩니다.
+   1. 정당한 이유없이 타인의 명예를 손상시키거나 권리를 침해하는 행위
+   2. 공공질서 또는 미풍양속을 해하는 행위
+   3. 본 사이트의 명예를 손상시키거나 운영을 방해하는 행위
+   4. 국가안전을 위협하거나 범죄와 결부된다고 인정되는 행위
+   5. 본 규칙에 위반하여 회원활동을 하는 행위
+   6. 기타 현행법에 위배되는 행위
+
+제 6조 (회원가입 제한)
+다음 각호에 해당되는 경우 사전 경고없이 해당 회원에 대해 삭제, 이동, 이용자 접근 제한, 이용 정지 등의 조치를 취할 수 있습니다.
+
+① 제 5 조에 의한 회원의 의무를 위반하였을 경우
+② 게시판에 불법 성인물 및 음란물을 게시하거나 링크하는 경우
+③ 게시판에 저작권 및 저작인접권을 침해하는 내용을 게시하거나 링크하는 경우
+④ 회원가입시 거짓정보를 기입한 경우
+⑤회원의 동의없이 상업적 광고성 글을 게제하는 경우
+
+제 7조 (관리자의 의무)
+회원가입과 관련하여 알게 된 회원의 신상정보를 본인의 승낙없이 타인에게 누설, 배포하거나 상업적 목적으로 사용할 수 없습니다. 단, 관계법령에 근거하여 관계 기관의 요구가 있는 경우, 운영위의 토의에 의해서 이에 응할 수 있습니다.
+				</pre>
+			</div>
+			<div id="agreeBtns">
+				<span class="icon" style="color:#fe7171">&#x56;</span>&nbsp;&nbsp;위 약관에 동의합니다.
+			</div>
+			<div id="agreeClose" class="icon">
+				&#x51;
+			</div>
+	    </div>
+	    
+	</div>
+	<div id="stileLoadWrap"></div>
+	<div id="stileNewLoadWrap"></div>
+
+    </body>
+</html>
+<script type="text/javascript">
+	
+
+	var joinAgree = false;
+	$('#agreeBtns').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		if(!joinAgree){
+			$('#agreeBtns .icon').html('&#x5a;').css('color', '#ddff80');
+			$('#agreeTitle').html('약관에 동의하셨습니다');
+			joinAgree = true;
+		}else{
+			$('#agreeBtns .icon').html('&#x56;').css('color','#fe7171');
+			$('#agreeTitle').html('약관에 동의하셔야 합니다');
+			joinAgree = false;
+		}
+	});
+	
+	//test
+//	$('#loginWrap').hide();
+//	$('#quickWrap').addClass('on');
+	
+	
+	
+	$('#quickRe').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#quickIdCustom').html( $('#quickIdCustom').html().substr(0, $('#quickIdCustom').html().length-1) );
+	});
+	$('.dial').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#quickIdCustom').html( $('#quickIdCustom').html()+$(this).html() )
+		
+	});
+	  
+	
+	$('#optionBackBtn').on('mousedown touchstart',function(e){
+		$('#listWrap').removeClass('option');
+		$('#optionWrap').removeClass('on');
+		$('#optionLine').removeClass('on');
+	});
+	
+	
+	$('#quickBtn').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#listWrap').addClass('blur2');
+		$('#quickWrap').addClass('on');
+		$('#quickBtnWrap').addClass('on');
+	});
+	
+	
+	$('#quickRoomMsgAddBtn').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#listWrap').removeClass('blur2');
+		$('#optionWrap').removeClass('blur2');
+		$('#quickWrap').removeClass('on');
+		$('#quickBtnWrap').removeClass('on');
+		$('#listWrap').removeClass('newItem')
+		$('#quickRoomWrap').removeClass('on')
+				
+				account.tiles.push({
+					id : $('#quickRoomInputId').html().substr(1),
+					tag : '#cfcfcf',
+					author : account.email,
+					view : 'all',
+					write : 'all'
+				})
+			go.main.setListAdd($('#quickRoomInputId').html().substr(1),account.email,'all','all')
+			go.main.loadList();
+			
+			
+	});
+		
+	
+	$('#quickCancel').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#listWrap').removeClass('blur2');
+		$('#optionWrap').removeClass('blur2');
+		$('#quickWrap').removeClass('on');
+		$('#quickBtnWrap').removeClass('on');
+	});
+		
+	
+	$('#modifyCancel').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#listWrap').removeClass('blur2');
+		$('#optionWrap').removeClass('blur2');
+		$('#modifyWrap').removeClass('on');
+		$('#modifyBtnWrap').removeClass('on');
+	});
+	
+
+	
+	
+	
+	$('#agreeClose').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#loginWrap').removeClass('blur')
+		$('#agreeWrap').removeClass('on')
+	});
+	
+	$('#showAgreement').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		$('#loginWrap').addClass('blur')
+		$('#agreeWrap').addClass('on')
+	});
+
+	var flagTag = false;
+	$('#tagBtn').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		if(!flagTag){
+			$('#listWrap').addClass('blur');
+			flagTag = true;
+		}else{
+			$('#listWrap').removeClass('blur');
+			flagTag = false;
+		}
+	})
+	
+
+	$('#newBtn').on('mousedown touchstart',function(e){
+		e.preventDefault();
+		
+		$.ajax({
+			type : 'POST',
+			url : 'http://seunghyun.net/brand/stile/int.php',
+			success : function(e){
+				$('#newTextarea').html("")
+				$('#newInputId').html('#'+e);
+				$('#listWrap').addClass('newItem')
+				$('#newWrap').addClass('on')
+				var tmpNewIframe = document.createElement('iframe');
+				tmpNewIframe.className = "stileNewLoader"
+				tmpNewIframe.setAttribute('src', 'http://210.118.34.68:5500/index_2.html#'+e);
+				tmpNewIframe.setAttribute('id', 'stileNewLoader')
+				$('#newTextarea').append(tmpNewIframe);
+				
+			}
+		});
+			
+	})
+	
+	var account = {
+		email : "me@seunghyun.net",
+		password : "8159742a",
+		name : "서승현",
+		tiles : [1,2,3,4,5]
+	}
+	
+	var status;
+	
+	
+
+	var Toast = { 
+		showShortBottom : function(msg){
+			//alert(msg)
+		}
+	}
+
+	var joinToggle = false;
+	
+	var go = {
+		main : {
+			index : function(){
+				status = "index";
+				$('#loginWrap').addClass('off');
+				setTimeout(function(){
+					$('#loginWrap').hide();
+				},1000)
+			},
+			loadList : function(){
+				$('#listWrap').html("");
+				$.ajax({
+					type : 'POST',
+					url : 'http://seunghyun.net/brand/stile/getTile.php',
+					data : { 
+						'email' : account.email
+					},
+					success : function(e){
+						if(e != null){
+							account.tiles = [];
+							tmpTiles = e.split('|')
+							for(var i in tmpTiles){
+								var splits = tmpTiles[i].split('/')
+								account.tiles.push({
+									id : splits[0],
+									tag : splits[1],
+									author : splits[2].split(','),
+									view : splits[3].split(','),
+									write : splits[4].split(',')
+								})
+							}
+							
+						}
+						
+						var onlyTileId = "";
+						
+						
+						
+						for(var i in account.tiles){
+							var blur_class = "";
+							var listIcon = "";
+							var author = "false";
+							var write = "false";
+							var view = "false";
+							if(!$.inArray(account.email,account.tiles[i].author) )
+							{
+								//주인이면
+								listIcon = "&#x7b;";
+								author = "true";
+							}else if(!$.inArray(account.email,account.tiles[i].view) || !$.inArray('all',account.tiles[i].view)){
+								//뷰가 가능하다면
+								//
+								listIcon = "&#xe101;";
+								view = "true";
+							}else if(!$.inArray(account.email,account.tiles[i].write) || !$.inArray('all',account.tiles[i].write)){
+								//쓰기가 가능하다면
+								listIcon = "&#x6a;";
+								write = "true";
+							}else{
+								blur_class = " blur";
+							}
+							$('#listWrap').append('<div class="item">'
++'<div class="itemMain">'
+    +'<div class="itemHead">'
+	+'    <div class="itemColor" style="background:'+account.tiles[i].tag+'"><strong>#'+account.tiles[i].id+'</strong></div>'
+    +'	<div class="itemId "><span class="icon">'+listIcon+'</span></div>'
+    +'</div>'
+    +'<div class="itemContent'+blur_class+'" tileContentId="'+account.tiles[i].id+'" author="'+author+'" view="'+view+'" write="'+write+'">'
+
+	+'</div>'
++'</div>'
+
+
++'<div class="itemInfo" alt="'+i+'">'
+	    +'<div  class="itemContentItem itemUrlBtn" alt="'+i+'" tileId="'+account.tiles[i].id+'" >'
+	    	+'<span class="icon">&#xe02b;</span>'
+	    +'</div>'
+	    
+	    +'<div class="itemContentItem itemRemoveBtn" alt="'+i+'">'
+	    	+'<span class="icon">&#xe019;</span>'
+	    +'</div>'
+
+	    +'<div class="itemContentItem itemOption" alt="'+i+'" tileId="'+account.tiles[i].id+'" style="border-right:none;" author="'+author+'" view="'+view+'" write="'+write+'">'
+	    	+'<span class="icon">&#xe035;</span>'
+	    +'</div>'
+	    
++'</div>'
++'<div class="itemMoreBtn">'
+	+'<span class="icon">&#x3b;</span>'
++'</div>'
++'</div>'
+							);
+							onlyTileId += account.tiles[i].id+'|';
+						}
+						
+						onlyTileId = onlyTileId.substr(0, onlyTileId.length-1);
+						
+						
+						// 타일 준비
+					var tmpIframe = document.createElement('iframe');
+					tmpIframe.className = "stileLoader"
+					tmpIframe.setAttribute('src', 'http://210.118.34.68:5500/stile.html#'+onlyTileId)
+					tmpIframe.setAttribute('id', 'stileLoader')
+					$('#stileLoadWrap').html("");
+					$('#stileLoadWrap').append(tmpIframe);
+
+					$('#stileLoader').load(function(){
+						var detectStileTimer = setTimeout(function(){
+							var stileScript = $('#stileLoader')[0].contentWindow;
+							for(var i in account.tiles){
+								$('[tileContentId="'+account.tiles[i].id+'"]').html('<pre>'+stileScript.docs['code:'+account.tiles[i].id].snapshot+'</pre>');
+							
+							
+							stileScript.docs['code:'+account.tiles[i].id].on('change',function(){
+								$('[tileContentId='+ this.name.substr(5)+']').html('<pre>'+stileScript.docs[this.name].snapshot+'</pre>');
+								if(!$('[tileContentId='+this.name.substr(5)+']').parent().hasClass('on')){
+											$('[tileContentId='+ this.name.substr(5)+']').parent().addClass('shake')
+											
+										}
+								});
+
+							}
+						},1000);
+					});
+					
+					
+					
+					}
+					});
+			},
+			setList : function(){
+				var tmpStringTile = [];
+				for(var i in account.tiles){
+					tmpStringTile.push(account.tiles[i].id+'/'+account.tiles[i].tag);
+				}
+
+				$.ajax({
+					type : 'POST',
+					url : 'http://seunghyun.net/brand/stile/setTile.php',
+					data : { 
+						'email' : account.email,
+						'tiles' : tmpStringTile.join(',')
+					},
+					success : function(e){						
+
+						go.main.loadList();
+					}
+				});
+
+			},
+			setListAdd : function(tile_id,tile_author,tile_view,tile_write){
+				var tmpStringTile = [];
+				for(var i in account.tiles){
+					tmpStringTile.push(account.tiles[i].id+'/'+account.tiles[i].tag);
+				}
+				
+				$.ajax({
+					type : 'POST',
+					url : 'http://seunghyun.net/brand/stile/setTile.php',
+					data : { 
+						'email' : account.email,
+						'tiles' : tmpStringTile.join(','),
+						'tile_id' : tile_id,
+						'tile_author' : tile_author,
+						'tile_view' : tile_view,
+						'tile_write' : tile_write
+					},
+					success : function(e){
+						$('#listWrap').html("");
+						setTimeout(function(){
+							go.main.loadList();
+						},400)
+						
+					}
+				});
+			},
+			getOption : function(idx){
+				$('#optionId').html( '#' + account.tiles[idx].id );
+				$('#optionAuth').html( account.tiles[idx].author );
+				$('#optionWriter').html( account.tiles[idx].write.join(',') );
+				$('#optionViewer').html( account.tiles[idx].view.join(',') );
+			},
+			login : function(){
+				status = 'login';
+				
+				$('#loginWrap .loginWrap .inputWrap .input input').focus(function(){
+					$('#loginWrap .logoWrap').addClass('keyboardHide');
+				}).blur(function(){
+					$('#loginWrap .logoWrap').removeClass('keyboardHide');
+				})
+				
+
+				document.addEventListener("backbutton", function(){
+					$('#loginWrap .logoWrap').removeClass('keyboardHide');
+				}, false);
+				
+				
+				$('#joinBtn').on('mousedown touchstart',function(e){
+					e.preventDefault();
+					if(!joinToggle){
+						go.main.join.on();
+					}else{
+						go.main.join.off();
+					}
+				})
+				
+				$('#loginSubmit').on('mousedown touchstart',function(e){
+					e.preventDefault();
+					if(joinToggle){
+						
+						if($('#loginNameInput').val() == "" || $('#loginEmailInput').val() == "" || $('#loginPWInput').val() == ""){
+							Toast.showShortBottom('회원가입 양식을 확인하세요.')
+							return false;
+						}
+						if(!joinAgree){
+							Toast.showShortBottom('약관에 동의하셔야 합니다.')
+							return false;
+						}
+						
+						$.ajax({
+							type : 'POST',
+							url : 'http://seunghyun.net/brand/stile/signup.php',
+							data : { 
+								'name' : $('#loginNameInput').val(),
+								'email' : $('#loginEmailInput').val(),
+								'password' : $('#loginPWInput').val()
+								 },
+							success : function(e){
+								if( e == 'success' ){
+									Toast.showShortBottom('가입에 성공하였습니다.');
+									go.main.join.off();
+									$('#loginPWInput').val("")
+									$('#loginPWInput').focus()
+									$('#loginNameInput').val("")
+								}else if( e == 'exist' ){
+									$('#loginNameInput').val("")
+									$('#loginPWInput').val("")
+									$('#loginEmailInput').val("")
+									$('#loginEmailInput').focus()
+									Toast.showShortBottom('해당 계정이 이미 존재합니다.');
+								}
+							}
+						})
+						
+					}else{
+						if($('#loginEmailInput').val() == "" || $('#loginPWInput').val() == "" || $('#loginPWInput').val() == ""){
+							Toast.showShortBottom('로그인 양식을 확인하세요.');
+							return false;
+						}
+						$.ajax({
+							type : 'POST',
+							url : 'http://seunghyun.net/brand/stile/signin.php',
+							data : { 
+								'email' : $('#loginEmailInput').val(),
+								'password' : $('#loginPWInput').val()
+								 },
+							success : function(e){
+								if( e.substr(0, 8) == 'success|' ){
+									Toast.showShortBottom('로그인 성공!');
+									account.name = e.split('|')[2];
+									
+									account.email = $('#loginEmailInput').val()
+									account.password = $('#loginPWInput').val()
+									go.main.loadList();
+									go.main.index();
+									
+								}else{
+									Toast.showShortBottom('로그인 실패');
+								}
+							}
+						})
+						
+//						
+						
+					}
+					
+					
+				})
+			},
+			join : {
+				on : function(){
+					$('#joinBtn').addClass("join")
+						$("#loginSubmit").addClass("join")
+						$("#joinWrap").addClass("join")
+						$("#loginWrap .logoWrap").addClass("join")
+						$('#joinBtn').html("&#xe04f;");
+						$('#loginSubmit').html("&#xe050");
+						$('#loginWrap .loginWrap .btnWrap').addClass("join")
+						joinToggle = true;
+				},
+				off : function(){
+					$('#joinBtn').removeClass("join")
+						$("#loginSubmit").removeClass("join")
+						$("#joinWrap").removeClass("join")
+						$("#loginWrap .logoWrap").removeClass("join")
+						$('#joinBtn').html("&#xe050;");
+						$('#loginSubmit').html("&#xe052;");
+						$('#loginWrap .loginWrap .btnWrap').removeClass("join")
+						joinToggle = false;
+				}
+			},
+		}
+	}
+			go.main.login();
+			go.main.loadList();
+		$('#newMsgAddBtn').on('mousedown touchstart',function(){
+			$('#listWrap').removeClass('newItem')
+			$('#newWrap').removeClass('on')
+			var tmpStringTile = [];
+				
+				account.tiles.push({
+					id : $('#newInputId').html().substr(1),
+					tag : '#cfcfcf',
+					author : account.email,
+					view : 'all',
+					write : 'all'
+				})
+			go.main.setListAdd($('#newInputId').html().substr(1),account.email,'all','all')
+			go.main.loadList();
+		})
+		$('#newMsgCancelBtn').on('mousedown touchstart',function(){
+			$('#listWrap').removeClass('newItem')
+			$('#newWrap').removeClass('on')
+		})
+		
+		$('#quickRoomMsgCancelBtn').on('mousedown touchstart',function(){
+
+			$('#listWrap').removeClass('newItem')
+			$('#quickRoomWrap').removeClass('on')
+			$('#quickWrap').removeClass('on');
+			$('#quickBtnWrap').removeClass('on');
+		})
+		
+		$('#roomMsgCancelBtn').on('mousedown touchstart',function(){
+			$('#listWrap').removeClass('newItem')
+			$('#roomWrap').removeClass('on')
+		})
+		
+		
+		$('#listWrap').delegate('.itemUrlBtn','click',function(e){
+			e.preventDefault();
+			alert("id : "+$(this).attr('tileId'));
+
+		});
+		
+		$('#listWrap').delegate('.itemRemoveBtn','click',function(e){
+			e.preventDefault();
+//			alert("id : "+$(this).attr('alt'));
+			account.tiles.splice(parseInt($(this).attr('alt')), 1);
+			go.main.setList();
+
+
+		});
+		$('#listWrap').delegate('.itemContent','click',function(e){
+			if($(this).attr('write') == "false" && $(this).attr('author') == "false" ) {
+				Toast.showShortBottom("쓸 수 있는 권한이 없습니다.");
+				return;
+			}
+			if($(this).attr('view') == "false" && $(this).attr('author') == "false") {
+				Toast.showShortBottom("볼 수 있는 권한이 없습니다.");
+				return;
+			}
+				var tileId = $(this).attr('tileContentId');
+				$('#roomInputId').html('#'+tileId);
+				$('#listWrap').addClass('newItem')
+				$('#roomWrap').addClass('on');
+				$('#roomTextarea').append($('#stileLoadWrap'));
+				$('#stileLoadWrap').show();
+				$('#roomMsgAddBtn').hide();
+				setTimeout(function(){
+
+					$('#stileLoader').contents().find('[alt='+tileId+']').css({
+						display:'inline'
+					})
+
+				}, 700)
+		});
+		
+		$('#quickSubmit').click(function(e){ 
+			
+				var tileId = $('#quickIdCustom').html();
+				$('#quickRoomInputId').html('#'+tileId);
+				
+				$('#listWrap').addClass('newItem')
+				$('#quickRoomWrap').addClass('on');
+				
+				$('#quickRoomTextarea').html("");
+				
+				
+				
+				
+				$('#listWrap').removeClass('blur2');
+				$('#quickWrap').removeClass('on');
+				$('#quickBtnWrap').removeClass('on');
+				setTimeout(function(){
+					var tmpNewIframe_ = document.createElement('iframe');
+				tmpNewIframe_.className = "stileNewLoader2"
+				tmpNewIframe_.setAttribute('src', 'http://210.118.34.68:5500/index_2.html#'+tileId);
+				tmpNewIframe_.setAttribute('id', 'stileNewLoader2')
+				$('#quickRoomTextarea').append(tmpNewIframe_);
+				}, 500)
+				
+		});
+		$('#listWrap').delegate('.itemMoreBtn','mousedown touchstart ',function(e){
+				e.preventDefault();
+				if( !$(this).hasClass('close') ){
+					$(this).addClass('close')
+					$(this).parent().find('.itemMain').addClass('off')
+					$(this).parent().find('.itemInfo').addClass('on')
+				}else{
+					$(this).removeClass('close')
+					$(this).parent().find('.itemInfo').removeClass('on')
+					$(this).parent().find('.itemMain').removeClass('off')
+				}
+
+		});
+		
+		$('#listWrap').delegate('.itemOption','mousedown touchstart',function(e){
+		e.preventDefault();
+		if($(this).attr('author') == "false"){
+			Toast.showShortBottom("옵션을 정할 수 있는 권한이 없습니다.");
+			return;
+		}
+		
+		var tileId = $(this).attr('alt');
+		go.main.getOption(tileId);
+		
+		$('#optionLine').css({
+			'top' : e.originalEvent.touches[0].clientY + 'px'
+		})
+		/*
+		$('#optionLine').css({
+			'top' : e.clientY + 'px'
+		})
+		*/
+		$('#listWrap').addClass('option');
+		$('#optionWrap').addClass('on');
+		$('#optionLine').addClass('on');
+	});
+		
+		$('#optionWriter').click(function(e){
+			e.preventDefault();
+			$('#listWrap').addClass('blur2');
+			$('#optionWrap').addClass('blur2');
+			$('#modifyWrap').addClass('on');
+			$('#modifyBtnWrap').addClass('on');
+			$('#modifyWrap').attr('mode','write');
+			$('#modifyWrap').attr('tile_id',$('#optionId').html().substr(1));
+
+			$('#modifyIdCustom').val( $('#optionWriter').html() );
+		})
+		
+		$('#optionViewer').click(function(e){
+			e.preventDefault();
+			$('#listWrap').addClass('blur2');
+			$('#optionWrap').addClass('blur2');
+			$('#modifyWrap').addClass('on');
+			$('#modifyBtnWrap').addClass('on');
+			$('#modifyWrap').attr('mode','view');
+			$('#modifyWrap').attr('tile_id',$('#optionId').html().substr(1));
+
+			$('#modifyIdCustom').val( $('#optionViewer').html() );
+
+		})
+		
+		$('#modifySubmit').click(function(e){
+			e.preventDefault();
+
+			$.ajax({
+				type : 'POST',
+				url : 'http://seunghyun.net/brand/stile/setTilePer.php',
+				data : { 
+					'tile_id' : $('#modifyWrap').attr('tile_id'),
+					'mode' : $('#modifyWrap').attr('mode'),
+					'value' : $('#modifyIdCustom').val()
+					 },
+				success : function(e){
+					go.main.loadList();
+					switch( $('#modifyWrap').attr('mode') )
+					{
+						case 'view' : 
+							$('#optionViewer').html( $('#modifyIdCustom').val() );
+						break;
+						
+						case 'write' : 
+							$('#optionWriter').html( $('#modifyIdCustom').val() );
+						break;
+					}
+						$('#listWrap').removeClass('blur2');
+						$('#optionWrap').removeClass('blur2');
+						$('#modifyWrap').removeClass('on');
+						$('#modifyBtnWrap').removeClass('on');
+				}
+			})
+		})
+		
+	document.addEventListener('deviceready', function(){
+			if(window.plugins){
+				Toast = window.plugins.toast;
+			}
+			StatusBar.hide();
+			
+/*
+			var region =
+			{
+			    identifier: 'MyRegion',
+			    uuid: '28f67260-1000-48b3-ade7-6cda36c999d5',
+			    major: 1,
+			    minor: 2
+			}
+			estimote.beacons.startRangingBeaconsInRegion(
+				region,
+		    function(e){
+			console.log(e)
+		    },
+		    function(e){
+			    alert("E:"+e)
+		    })
+		    
+		    
+		    
+*/
+
+/*
+				
+				estimote.nearables.startRangingForType(
+    estimote.nearables.NearableTypeAll,
+		    function(e){
+			    alert("s:"+e)
+		    },
+		    function(e){
+			    alert("E:"+e)
+		    })
+*/
+
+	});
+</script>
